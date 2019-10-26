@@ -1,0 +1,50 @@
+.Page.SetupAccount {
+    .BackgroundContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .welcome-message {
+        text-align: center;
+        margin-top: 70px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .input-form {
+        color: #fff;
+        flex: 1;
+        text-align: center;
+        margin-top: 40px;
+
+        input {
+            display: block;
+            outline: none !important;
+            border: none;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            padding: 12px 16px;
+            margin-top: 4px;
+            border-radius: 8px;
+        }
+    }
+
+    footer {
+        display: block;
+        width: 100%;
+        text-align: right;
+        padding: 0 30px;
+        box-sizing: border-box;
+        background: var(--color-bg-tint);
+
+        .confirm-btn {
+            padding: 12px 16px;
+            background: rgba(0, 0, 0, 0.2);
+            border: none;
+            color: var(--color-white);
+            border-radius: 0;
+            outline: 0 !important;
+        }
+    }
+}

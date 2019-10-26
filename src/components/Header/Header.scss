@@ -1,10 +1,32 @@
 .Header {
     color: var(--color-white);
     padding: 20px var(--padding-sides);
-}
+    display: flex;
+    background: var(--color-bg);
 
-.Header h1 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 700;
+    .left {
+        flex: 1;
+    }
+
+    .right {
+        flex: 1;
+        text-align: right;
+    }
+    
+    .fas {
+        margin-left: 16px;
+        font-size: 18px;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 1px;
+    }
+
+    a {
+        color: var(--color-white);
+        text-decoration: none !important;
+    }
 }

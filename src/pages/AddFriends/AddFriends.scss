@@ -1,0 +1,41 @@
+.Page.AddFriends {
+    min-height: 100vh;
+    background: #f5f5f5;
+
+    .add-form {
+        padding: 20px 30px;
+
+        input {
+            margin: 0;
+            border: none;
+            border-radius: 0;
+            outline: none !important;
+            padding: 12px 16px;
+            border-radius: 8px;
+            box-sizing: border-box !important;
+            display: block;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            margin-top: 12px;
+        }
+
+        button {
+            border: none;
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+            border-radius: 8px;
+            padding: 12px;
+            outline: none !important;
+            box-sizing: border-box !important;
+            display: block;
+            float: right;
+            margin-top: 12px;
+        }
+    }
+
+    .FriendList {
+        padding: 20px 30px;
+        clear: both;
+
+    }
+}

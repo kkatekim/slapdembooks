@@ -1,5 +1,5 @@
 import React from 'react';
-import './Home.js';
+import './Home.scss';
 import BackgroundContainer from '../../components/BackgroundContainer/BackgroundContainer';
 import CheckedInStatus from '../../components/CheckedInStatus/CheckedInStatus';
 import Header from '../../components/Header/Header.js';
