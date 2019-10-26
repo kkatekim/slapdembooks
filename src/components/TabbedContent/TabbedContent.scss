@@ -1,0 +1,17 @@
+.TabBar {
+    border-bottom: 2px solid #eee;
+    padding: 0 var(--padding-sides);
+    padding-top: 18px;
+}
+
+.TabBar .TabItem {
+    display: inline-block;
+    margin-right: 20px;
+    padding-bottom: 8px;
+    color: #777;
+    font-weight: 500;
+}
+
+.TabBar .TabItem.active {
+    color: var(--color-primary) !important;
+}

@@ -1,0 +1,22 @@
+.CheckedInStatus {
+    color: var(--color-white);
+    padding: 0 var(--padding-sides);
+    
+    .ActionRow {
+        margin: 20px 0;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-right: 8px;
+        padding: 10px 12px;
+        border-radius: 8px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 13px;
+    }
+    
+    .btn-primary {
+        background: var(--color-bg-tint);
+    }
+}

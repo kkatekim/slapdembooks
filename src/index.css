@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,500,700|Nunito:400,700|Source+Sans+Pro&display=swap');
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  --color-white: #FFFFFF;
+  --color-primary: #0D5283;
+  --color-bg: #F05D54;
+  --color-bg-tint: #ff837B;
+  --padding-sides: 30px; /* Horizontal padding between sides of screen and content */
+  font-family: 'Work Sans', Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  font-size: 16px;
+  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
