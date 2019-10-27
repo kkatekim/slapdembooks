@@ -1,0 +1,54 @@
+.friendsList{
+    list-style-type: none;
+}
+
+.box{
+    padding: 20px;
+    box-shadow: 4px 4px 4px 2px #c4c4c4;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+.pic{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 10px;
+}
+
+.name{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+
+ul{
+    padding-inline-start: 0px;
+}
+
+.searchbar{
+    font-size: 20px;
+    padding: 10px 15px 10px 15px;
+    background-color: #efefef;
+    margin: 15px 15px 0px 15px;
+    border-radius: 30px;
+    color: #c4c4c4
+
+}
+
+.pageTitle{
+    font-size: 25px;
+    margin: 15px;
+}
+
+.friendIcon{
+    float: right;
+}
+
+#searchIcon{
+    float: right;
+}

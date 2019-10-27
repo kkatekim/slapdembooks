@@ -13,6 +13,7 @@ import AddFriends from './pages/AddFriends/AddFriends';
 import SetupAccount from './pages/SetupAccount/SetupAccount';
 import CheckIn from './pages/CheckIn/CheckIn';
 import Profile from './pages/Profile/Profile';
+import Friends from './pages/Friends/Friends';
 
 ReactDOM.render(
     <FirebaseContext.Provider value={new Firebase()}>
@@ -25,6 +26,7 @@ ReactDOM.render(
             <Route exact path='/account' component={Account} />
             <Route exact path='/addfriends' component={AddFriends} />
             <Route exact path='/profile' component={Profile} />
+            <Route exact path='/friends' component={Friends} />
         </Router>
     </FirebaseContext.Provider>,
     document.getElementById('root')
