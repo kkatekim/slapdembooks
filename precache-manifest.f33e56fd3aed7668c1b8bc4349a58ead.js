@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e291de7ab96a2e43322db7e39171bb8b",
+    "revision": "e5d2ae39a9150b9a311e90dba6f6d6eb",
     "url": "/slapdembooks/index.html"
   },
   {
-    "revision": "a417bbc2676f455bfb68",
+    "revision": "96cd6ae638c80cf85e32",
     "url": "/slapdembooks/static/css/main.d039dd24.chunk.css"
   },
   {
-    "revision": "2ea2969da7279a8311dd",
-    "url": "/slapdembooks/static/js/2.349187cc.chunk.js"
+    "revision": "8ebde99033101a467ff9",
+    "url": "/slapdembooks/static/js/2.f03e673c.chunk.js"
   },
   {
-    "revision": "a417bbc2676f455bfb68",
-    "url": "/slapdembooks/static/js/main.e7a8e38f.chunk.js"
+    "revision": "96cd6ae638c80cf85e32",
+    "url": "/slapdembooks/static/js/main.9db27d05.chunk.js"
   },
   {
     "revision": "0134d2f2bf131a72bc1e",
