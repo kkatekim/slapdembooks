@@ -17,7 +17,7 @@ import Friends from './pages/Friends/Friends';
 
 ReactDOM.render(
     <FirebaseContext.Provider value={new Firebase()}>
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
             <Route exact path='/' component={Home} />
             <Route exact path='/login' component={Login} />
             <Route exact path='/logout' component={Logout} />
