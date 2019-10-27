@@ -11,32 +11,45 @@ const Profile = (props) => {
             <Header action="close"/>
                 {
                 <>
-                    <img src="https://lh3.googleusercontent.com/-bxij4YMT3XY/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rdUVPzzXHLpEwHq5RjzTY5Ayid6xA/photo.jpg" className="pic"/>
+                    <div className="center">
+                        <img src="https://lh3.googleusercontent.com/-bxij4YMT3XY/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rdUVPzzXHLpEwHq5RjzTY5Ayid6xA/photo.jpg" className="pic"/>
+                    </div>
                     <div className="accountName">Logan Ralston</div>
                     <div className="accountUsername">logan-r</div>
-
-                    <div className="currentCourses">
-                        <div className="infoTitle">
-                            <i class="fas fa-clipboard-list"></i>&nbsp;
-                            Logan Ralston is currently taking
-                            <ul className="couseList">
+                    
+                    <div className="defaultFontSize">
+                        <div className="currentCourses">
+                            <div className="infoTitle">
+                                <i className="icon fas fa-clipboard-list"></i>
+                                Logan Ralston is currently taking <span className="edit">edit</span>
+                            </div>
+                            <ul className="courseList">
                                 <li>MATH223</li>
                                 <li>PSYC305</li>
-                                <li>PHIL210</li>
+                                <li>COMP302</li>
                                 <li>COMP303</li>
                             </ul>
-                        </div>
-                        <div className="infoTitle">
-                            Status: Checked In
-                        </div>
-                        <div className="infoTitle">
-                            <i class="fas fa-map-marker-alt"></i>
-                            Studying in Bronfman
-                        </div>
-                        <div className="infoTitle">
-                            <i class="fas fa-book"></i>
-                            Focusing on <span className="courseFocus"> MATH223</span>
-                        </div>
+                            </div>
+
+                            <hr></hr>
+
+                            <div className="checkInInfo">
+                                <div className="infoTitle">
+                                    Status: Checked In
+                                    <span className="edit">edit</span>
+                                </div>
+                                <div className="infoTitle">
+                                    <i className="icon fas fa-map-marker-alt"></i> 
+                                    Studying in Bronfman
+                                </div>
+                                <div className="infoTitle">
+                                    <i className="icon fas fa-book"></i> 
+                                    Focusing on <span className="courseFocus"> MATH223</span>
+                                    
+                                </div>
+                                <p className="description">I'm working on Assignment 2 right now. Come join me!</p>
+                            </div>
+                        
                     </div>
                 </>
                 }

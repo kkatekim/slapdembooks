@@ -2,7 +2,7 @@
     .accountName {
     text-align: center;
     color: #000000;
-    font-size: 27px;
+    font-size: 35px;
     margin-top: 8px;
     margin-bottom: 10px;
     font-weight: 500;
@@ -11,7 +11,6 @@
     .accountUsername{
     text-align: center;
     color: #c4c4c4;
-    font-size: 15px;
     margin-top: 8px;
     margin-bottom: 10px;
     font-weight: 500;
@@ -22,16 +21,53 @@
     height: 160px;
     border-radius: 50%;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 20px;
     }
 
     .courseList{
-    color: #0D5283;
-    list-style-type:none
+        color: #0D5283;
+        list-style-type:none;
+        columns: 2;
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        margin: 20px;
     }
 
     .infoTitle{
-    font-size: 15px;
-    padding: 15px;
+        padding-top: 15px;
+        padding-left: 30px;
+    }
+
+    .center{
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .defaultFontSize{
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    hr{
+        width: 90%;
+    }
+
+    .icon{
+        color: #0D5283;
+        font-size: 25px;
+        margin-right: 5px;
+    }
+
+    .description{
+        color: #0D5283;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .edit{
+        float: right;
+        padding-right: 15px;
+        text-decoration: underline;
+        color: #c4c4c4;
     }
 }
