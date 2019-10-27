@@ -1,5 +1,4 @@
-.Friends {
-
+.Friends{
     .friendsList{
         list-style-type: none;
     }
@@ -7,10 +6,14 @@
     .box{
         padding: 20px;
         box-shadow: 4px 4px 4px 2px #c4c4c4;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         margin-left: 30px;
         margin-right: 30px;
+        width: 85%;
+        text-align: left;
+        background-color: white;
+        border: none;
 
     }
 
@@ -27,10 +30,6 @@
         font-size: 18px;
     }
 
-
-    ul{
-        padding-inline-start: 0px;
-    }
 
     .searchbar{
         font-size: 20px;
@@ -53,5 +52,12 @@
 
     #searchIcon{
         float: right;
+    }
+
+    #searchInput{
+        background-color: #efefef;
+        border: 0px;
+        outline: none;
+        width: 90%;
     }
 }
