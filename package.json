@@ -1,5 +1,6 @@
 {
-  "name": "StudyBuddy",
+  "name": "SlapDemBooks",
+  "homepage": "http://slapdembooks.wtf",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

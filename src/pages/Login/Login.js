@@ -10,7 +10,7 @@ const LoginNested = (props) => {
     useEffect(() => {
         props.firebase.auth.onAuthStateChanged(function(user) {
             if (user) {
-                // User is signed in.
+                // User is signed in
                 setMode('redirecting')
             } else {
                 setMode('login')

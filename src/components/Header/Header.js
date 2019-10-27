@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Header = (props) => (
     <div className="Header">
         <div className="left">
-            <h1>Slap dem Books</h1>
+            <h1>{props.title || 'Slap dem Books'}</h1>
         </div>
         <div className="right">
             {

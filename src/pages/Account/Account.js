@@ -6,39 +6,45 @@ import { Link } from 'react-router-dom';
 import { FirebaseContext } from '../../components/Firebase';
 
 const AccountInner = (props) => {
-    const [userDoc, setUserDoc] = useState(null);
-    // useEffect(() => {
-    //     props.firebase.getCurrentUserDoc().then((doc) => {
-    //         alert(doc)
-    //         setUserDoc(doc);
-    //     })
-    // }, [])
-    setUserDoc(props.firebase);
+    const [user, setUser] = useState(null);
+    useEffect(() => {
+        // Track if user is logged in or not
+        props.firebase.auth.onAuthStateChanged((_user) => {
+			if (_user) {
+                props.firebase.db.collection('users').where('uid', '==', _user.uid).get().then((querySnapshot) => {
+                    setUser({username: querySnapshot.docs[0].id, ...querySnapshot.docs[0].data()});
+                }).catch(e => alert("Error " + e))
+			} else {
+				setUser(_user);
+			}
+		});
+    }, []);
+
     return (
         <div className="Page Account">
             <BackgroundContainer>
                 <Header action="close"/>
                     {
-                    <>
-                        <img src="https://lh3.googleusercontent.com/-bxij4YMT3XY/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3rdUVPzzXHLpEwHq5RjzTY5Ayid6xA/photo.jpg" className="pic"/>
-                        <div className="accountName">{props.firebase.activeUserName}</div>
+                        user && <>
+                            <img src={user.photoURL} className="pic"/>
+                            <div className="accountName">{user.username}</div>
 
-                        <div className="options">
-                            <Link to='/addfriends'>
-                                <i class="fas fa-user-plus"></i>&nbsp;
-                                Add Friends
-                            </Link>
-                            <Link to='/profile'>
-                                <i class="fas fa-user-circle"></i>&nbsp;
-                                View Profile
-                            </Link>
-                            <Link to='/logout'>
-                                <i class="fas fa-sign-out-alt"></i>&nbsp;
-                                Logout
-                            </Link>
-                        </div>
-                    </>
-                }
+                            <div className="options">
+                                <Link to='/addfriends'>
+                                    <i class="fas fa-user-plus"></i>&nbsp;
+                                    Add Friends
+                                </Link>
+                                <Link to='/profile'>
+                                    <i class="fas fa-user-circle"></i>&nbsp;
+                                    View Profile
+                                </Link>
+                                <Link to='/logout'>
+                                    <i class="fas fa-sign-out-alt"></i>&nbsp;
+                                    Logout
+                                </Link>
+                            </div>
+                        </>
+                    }
             </BackgroundContainer>
         </div>
     )

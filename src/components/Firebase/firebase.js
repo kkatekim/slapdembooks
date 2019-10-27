@@ -19,36 +19,23 @@ class Firebase {
         this.auth = app.auth();
         this.db = app.firestore();
         this.googleProvider = new app.auth.GoogleAuthProvider();
-        this.cacheCurrentUser = null;
-
-        this.auth.onAuthStateChanged(function(user) {
-            if (user) {
-                // User is signed in.
-                this.db.collection('users').where('uid', '==', this.getCurrentUser().uid).get().then((querySnapshot) => {
-                    this.cacheCurrentUser = querySnapshot.docs[0];
-                })
-            } else {
-                this.cacheCurrentUser = null;
-            }
-        });
     }
 
     doSignInWithGoogle = () => this.auth.signInWithRedirect(this.googleProvider);
 
     doSignOut = () => this.auth.signOut();
 
-    getCurrentUser = () => {
+    /*getCurrentUser = () => {
         if (this.auth.currentUser !== null) {
             this.cachedCurrentUser = this.auth.currentUser;
         }
-        this.auth.currentUser.
     };
 
     getCurrentUserDoc = () => new Promise((resolve, reject) => {
         this.db.collection('users').where('uid', '==', this.getCurrentUser().uid).get().then((querySnapshot) => {
             resolve(querySnapshot.docs[0]);
         })
-    });
+    });*/
 }
 
 export default Firebase;
