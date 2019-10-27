@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/slapdembooks/static/css/main.d039dd24.chunk.css",
-    "main.js": "/slapdembooks/static/js/main.9db27d05.chunk.js",
-    "main.js.map": "/slapdembooks/static/js/main.9db27d05.chunk.js.map",
-    "runtime-main.js": "/slapdembooks/static/js/runtime-main.7f085979.js",
-    "runtime-main.js.map": "/slapdembooks/static/js/runtime-main.7f085979.js.map",
-    "static/js/2.f03e673c.chunk.js": "/slapdembooks/static/js/2.f03e673c.chunk.js",
-    "static/js/2.f03e673c.chunk.js.map": "/slapdembooks/static/js/2.f03e673c.chunk.js.map",
-    "index.html": "/slapdembooks/index.html",
-    "precache-manifest.f33e56fd3aed7668c1b8bc4349a58ead.js": "/slapdembooks/precache-manifest.f33e56fd3aed7668c1b8bc4349a58ead.js",
-    "service-worker.js": "/slapdembooks/service-worker.js",
-    "static/css/main.d039dd24.chunk.css.map": "/slapdembooks/static/css/main.d039dd24.chunk.css.map"
+    "main.css": "/static/css/main.e1c116b4.chunk.css",
+    "main.js": "/static/js/main.24849656.chunk.js",
+    "main.js.map": "/static/js/main.24849656.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ea2aebb4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ea2aebb4.js.map",
+    "static/js/2.f28fdc81.chunk.js": "/static/js/2.f28fdc81.chunk.js",
+    "static/js/2.f28fdc81.chunk.js.map": "/static/js/2.f28fdc81.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.39ea678c309be9e48ed7e1f59ebc1c41.js": "/precache-manifest.39ea678c309be9e48ed7e1f59ebc1c41.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.e1c116b4.chunk.css.map": "/static/css/main.e1c116b4.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.7f085979.js",
-    "static/js/2.f03e673c.chunk.js",
-    "static/css/main.d039dd24.chunk.css",
-    "static/js/main.9db27d05.chunk.js"
+    "static/js/runtime-main.ea2aebb4.js",
+    "static/js/2.f28fdc81.chunk.js",
+    "static/css/main.e1c116b4.chunk.css",
+    "static/js/main.24849656.chunk.js"
   ]
 }
