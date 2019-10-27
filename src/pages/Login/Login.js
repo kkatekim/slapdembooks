@@ -3,6 +3,7 @@ import './Login.scss';
 import BackgroundContainer from '../../components/BackgroundContainer/BackgroundContainer.js';
 import { FirebaseContext } from '../../components/Firebase';
 import { Redirect } from 'react-router-dom';
+import Logo from '../../logo.png';
 
 const LoginNested = (props) => {
     // Login screen can either be loading, redirecting or login
@@ -37,10 +38,12 @@ const LoginNested = (props) => {
         <div className="Page Login">
             <BackgroundContainer>
                 <div class="aligner">
-                    <div className="logoPlaceholder"></div>
+                    <div className="logoWrapper">
+                        <img id="logo" src={Logo}/>
+                    </div>
                     {
                         mode === 'login' &&
-                        <div className="btn-login googleLogin" onClick={props.firebase.doSignInWithGoogle}>
+                        <div id="btn-login" className="btn-login googleLogin" onClick={props.firebase.doSignInWithGoogle}>
                             Login with Google
                         </div>
                     }
