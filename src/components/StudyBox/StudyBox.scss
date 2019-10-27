@@ -2,8 +2,9 @@
     --padding-inside: 12px;
     margin: 0 calc(var(--padding-sides) - var(--padding-inside));
     margin-top: 20px;
-    border-radius: 12px;
+    border-radius: 8px;
     padding: 14px var(--padding-inside);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .StudyBox .intro-label {
@@ -12,8 +13,7 @@
 
 .StudyBox .ContactList {
     border-top: 2px solid #eee;
-    border-bottom: 2px solid #eee;
-    padding: 10px 0;
+    padding-top: 10px;
 }
 
 .StudyBox .pic {
