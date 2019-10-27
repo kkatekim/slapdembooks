@@ -43,6 +43,12 @@ class Firebase {
         }).then(() => resolve()).catch(() => reject());
     });
 
+    /* Take two usernames and makes both those users friends with eachother */
+    doMakeFriends(username1, username2) {
+        this.db.collection('users').doc(username1).set({'friends': [username2]}, {merge: true});
+        this.db.collection('users').doc(username2).set({'friends': [username1]}, {merge: true});
+    }
+
     /*getCurrentUser = () => {
         if (this.auth.currentUser !== null) {
             this.cachedCurrentUser = this.auth.currentUser;

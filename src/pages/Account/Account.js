@@ -30,7 +30,7 @@ const AccountInner = (props) => {
                             <div className="accountName">{user.username}</div>
 
                             <div className="options">
-                                <Link to='/addfriends'>
+                                <Link to='/friends'>
                                     <i class="fas fa-user-plus"></i>&nbsp;
                                     Add Friends
                                 </Link>
