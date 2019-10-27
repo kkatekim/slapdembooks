@@ -16,8 +16,8 @@ const StudyBox = (props) => {
                 {
                     props.contacts.map((contact, i) => (
                         <div class="Contact" key={i}>
-                            <img class="pic" src={'https://i.pravatar.cc/' + (38 + i).toString()}/>
-                            {contact.name} is studying {contact.course}
+                            <img class="pic" src={contact.photoURL}/>
+                            {contact.displayName} is studying {contact.checkedin.subject}
                         </div>
                     ))
                 }

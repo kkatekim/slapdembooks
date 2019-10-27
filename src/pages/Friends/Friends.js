@@ -63,6 +63,7 @@ class Friends extends React.Component{
                                 })
                             }
                         });
+                        console.log(userData.friends)
                         this.setState({people: friendsList});
                     });
                 }).catch(e => alert("Error " + e))

@@ -12,12 +12,40 @@ import { Redirect } from 'react-router-dom';
 const HomeInner = (props) => {
     const [redirectToLogin, setRedirectToLogin] = useState(false);
     const [user, setUser] = useState(null);
+    const [friendsByLocation, setFriendsByLocation] = useState({});
     useEffect(() => {
         // Track if user is logged in or not
         props.firebase.auth.onAuthStateChanged((_user) => {
 			if (_user !== null) {
                 props.firebase.db.collection('users').where('uid', '==', _user.uid).get().then((querySnapshot) => {
-                    setUser({username: querySnapshot.docs[0].id, ...querySnapshot.docs[0].data()});
+                    let userData = querySnapshot.docs[0].data();
+                    setUser({username: querySnapshot.docs[0].id, ...userData});
+                    let friendsNames = userData.friends;
+                    
+                    props.firebase.db.collection('users').get().then((querySnapshot) => {
+                        let friendsList = [];
+                        querySnapshot.forEach((doc) => {
+                            if (friendsNames.indexOf(doc.id) !== -1) {
+                                friendsList.push({
+                                    username: doc.id,
+                                    ...doc.data()
+                                    // ...doc.data() same as saying:
+                                    //photoURL: doc.data().photoURL,
+                                    //displayName: doc.data().displayName
+                                })
+                            }
+                        });
+                        friendsList = friendsList.filter(friend => friend.checkedin.active);
+                        let friendsByLocationTemp = {}
+                        friendsList.forEach(friend => {
+                            if (friendsByLocationTemp[friend.checkedin.location] === undefined) {
+                                friendsByLocationTemp[friend.checkedin.location] = [friend];
+                            } else {
+                                friendsByLocationTemp[friend.checkedin.location].push(friend);
+                            }
+                        });
+                        setFriendsByLocation(friendsByLocationTemp);
+                    });
                 }).catch(e => alert("Error " + e))
 			} else {
                 setUser(_user);
@@ -57,18 +85,27 @@ const HomeInner = (props) => {
             <Header/>
             <CheckedInStatus user={user} handleCheckOut={handleCheckOut}/>
             <ContainerPanel>
-                <TabbedContent tabs={['Friends', 'Courses']}
-                               tabContents={[
+                <TabbedContent  tabs={['Friends', 'Courses']}
+                                tabContents={[
                                    <div>
-                                       <StudyBox contacts={[{name: 'Kate', course: 'NSCI200'}, {name: 'Sasha', course: 'PHIL210'}]} location="McLennan" noun={['friend is', 'friends are']}/>
-                                       <StudyBox contacts={[{name: 'Grace', course: 'MATH223'}]} location="Burnside" noun={['friend is', 'friends are']}/>
-                                   </div>,
-                                   <div>
-                                       Find other people studying the same course as you
+                                        {
+                                            Object.keys(friendsByLocation).map(
+                                               (location, i) =>
+                                               <StudyBox key={i} location={location} contacts={friendsByLocation[location]} noun={['friend is', 'friends are']}/>
+                                            )
+                                        }
+                                    </div>,
+                                    <div>
+                                        Find other people studying the same course as you
 
-                                       <StudyBox contacts={[{name: 'Kate', course: 'NSCI200'}, {name: 'Sasha', course: 'PHIL210'}]} location="McLennan" noun={['person is', 'people are']}/>
-                                   </div>
-                               ]}/>
+                                        {
+                                            Object.keys(friendsByLocation).map(
+                                                (location, i) =>
+                                                <StudyBox key={i} location={location} contacts={friendsByLocation[location]} noun={['person is', 'friends are']}/>
+                                            )
+                                        }
+                                    </div>
+                                ]}/>
             </ContainerPanel>
         </BackgroundContainer>
     </div>);
