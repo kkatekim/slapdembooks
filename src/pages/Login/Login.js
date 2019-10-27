@@ -10,14 +10,25 @@ const LoginNested = (props) => {
     useEffect(() => {
         props.firebase.auth.onAuthStateChanged(function(user) {
             if (user) {
-                // User is signed in
-                setMode('redirecting')
+                props.firebase.db.collection('users').where('uid', '==', user.uid).get().then((querySnapshot) => {
+                    console.log(querySnapshot)
+                    if (querySnapshot.docs.length > 0) {
+                        // User has already logged in with google, don't need to go through setup process
+                        setMode('redirect to home');
+                    } else {
+                        // User hasn't logged in with google before, go through setup process
+                        setMode('redirect to setup');
+                    }
+                }).catch(e => alert("Error " + e))
             } else {
                 setMode('login')
             }
         });
     }, []);
-    if (mode === 'redirecting') {
+    if (mode === 'redirect to setup') {
+        return <Redirect to='/setup'></Redirect>
+    }
+    if (mode === 'redirect to home') {
         return <Redirect to='/'></Redirect>
     }
       

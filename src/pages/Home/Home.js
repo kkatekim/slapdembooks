@@ -10,16 +10,18 @@ import { FirebaseContext } from '../../components/Firebase';
 import { Redirect } from 'react-router-dom';
 
 const HomeInner = (props) => {
+    const [redirectToLogin, setRedirectToLogin] = useState(false);
     const [user, setUser] = useState(null);
     useEffect(() => {
         // Track if user is logged in or not
         props.firebase.auth.onAuthStateChanged((_user) => {
-			if (_user) {
+			if (_user !== null) {
                 props.firebase.db.collection('users').where('uid', '==', _user.uid).get().then((querySnapshot) => {
                     setUser({username: querySnapshot.docs[0].id, ...querySnapshot.docs[0].data()});
                 }).catch(e => alert("Error " + e))
 			} else {
-				setUser(_user);
+                setUser(_user);
+                setRedirectToLogin(true);
 			}
 		});
     }, []);
@@ -40,6 +42,10 @@ const HomeInner = (props) => {
 
     if (redirectHome) {
         return <Redirect to='/'/>;
+    }
+
+    if (redirectToLogin) {
+        return <Redirect to='/login'/>;
     }
 
     if (!user) {

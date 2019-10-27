@@ -25,6 +25,24 @@ class Firebase {
 
     doSignOut = () => this.auth.signOut();
 
+    doSetupUser = (username) => new Promise((resolve, reject) => {
+        // Get current data from google user
+        let gUser = this.auth.currentUser;
+
+        this.db.collection('users').doc(username).set({
+            uid: gUser.uid,
+            displayName: gUser.displayName,
+            photoURL: gUser.photoURL,
+            checkedin: {
+                active: false,
+                location: '',
+                subject: '',
+                message: ''
+            },
+            friends: []
+        }).then(() => resolve()).catch(() => reject());
+    });
+
     /*getCurrentUser = () => {
         if (this.auth.currentUser !== null) {
             this.cachedCurrentUser = this.auth.currentUser;
