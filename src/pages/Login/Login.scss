@@ -9,12 +9,24 @@
         }
     }
 
-    .btn-login {
+    #btn-login {
+        text-align: center;
         background: #fff;
         box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
         margin: 16px var(--padding-sides);
         margin-top: 0;
-        padding: 14px 18px;
-        border-radius: 8px;
+        padding: 18px 0px;
+        border-radius: 30px;
+        font-size: 20px;
+    }
+
+    .logoWrapper{
+        text-align: center;
+        margin-top: 30%;
+        margin-bottom: 20px;
+    }
+
+    #logo{
+        width: 90%;
     }
 }
